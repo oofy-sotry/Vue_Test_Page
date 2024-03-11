@@ -3,6 +3,8 @@
     <div class="Header">
       <img src="../assets/logo.png" alt="Logo">
       <h1>{{ msg }}</h1>
+      <button class="login" @click="openLoginWindow">로그인</button>
+      <button class="sign"  @click="openSignWindow">회원가입</button>
     </div>
 
     <div class="Body">
@@ -47,6 +49,13 @@ export default {
     showComponent2 (data) {
       this.component1Data = data // Component1에서 받은 데이터 저장
       this.selectedComponent = 'Component2' // Component2 표시
+    },
+    openSignWindow () {
+      window.open('/sign', '_blank', 'width=600,height=600')
+    },
+
+    openLoginWindow () {
+      window.open('/login', '_blank', 'width=600,height=600')
     }
   }
 }
@@ -110,5 +119,21 @@ h1 {
   margin-bottom: 20px;
   text-align: center;
   background-color: #D9D9D9;
+}
+
+.login {
+  width: 70px;
+  height: 50px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.sign {
+  width: 70px;
+  height: 50px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 </style>
